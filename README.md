@@ -9,8 +9,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 ```
-NetBeans IDE
 JavaFX 8
+NetBeans IDE
 Scene Builder 2.0
 ```
 
@@ -18,11 +18,15 @@ Scene Builder 2.0
 
 Step 1: Install the Java SE Development Kit 8
 	
-["How to install the Netbeans IDE and Java JDK on Windows 8 / 8.1 or Windows 10"](https://www.youtube.com/watch?v=YuFxDBG8IGQ). 4:09
+["How to install the Netbeans IDE and Java JDK on Windows 8 / 8.1 or Windows 10: (0:00 - 4:09)"](https://www.youtube.com/watch?v=YuFxDBG8IGQ).
 
 Step 2: Install NetBeans IDE
 
-["How to install the Netbeans IDE and Java JDK on Windows 8 / 8.1 or Windows 10"](https://www.youtube.com/watch?v=YuFxDBG8IGQ). 4:09 -11:15
+["How to install the Netbeans IDE and Java JDK on Windows 8 / 8.1 or Windows 10: (4:09 - 11:15)"](https://www.youtube.com/watch?v=YuFxDBG8IGQ). 4:09 -11:15
+
+Step 3: Install Scene Builer 2.0
+
+["How to Install JavaFX Scene Builder"](https://www.youtube.com/watch?v=e1fjF9t60dE).
 
 ```
 until finished
