@@ -18,9 +18,11 @@ Scene Builder 2.0
 
 Step 1: Install the Java SE Development Kit 8
 	
-	["How To Download And Install Java on Window 10 (Java JDK on Windows 10) + Set JAVA_HOME"](https://www.youtube.com/watch?v=_YmuR4aw9pM).
+["How to install the Netbeans IDE and Java JDK on Windows 8 / 8.1 or Windows 10"](https://www.youtube.com/watch?v=YuFxDBG8IGQ). 4:09
 
-And repeat
+Step 2: Install NetBeans IDE
+
+["How to install the Netbeans IDE and Java JDK on Windows 8 / 8.1 or Windows 10"](https://www.youtube.com/watch?v=YuFxDBG8IGQ). 4:09 -11:15
 
 ```
 until finished
