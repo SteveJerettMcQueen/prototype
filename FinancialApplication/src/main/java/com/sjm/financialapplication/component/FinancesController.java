@@ -32,7 +32,6 @@ import org.springframework.stereotype.Component;
 import com.sjm.financialapplication.concurrency.AppExecutorService;
 import com.sjm.financialapplication.concurrency.ViewWorkers.AccountViewer;
 import com.sjm.financialapplication.model.Account;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Pagination;
 import javafx.scene.input.MouseEvent;

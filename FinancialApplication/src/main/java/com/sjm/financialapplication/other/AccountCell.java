@@ -25,7 +25,8 @@ public class AccountCell extends ListCell<AccountFX> {
     public void updateItem(AccountFX item, boolean empty) {
         super.updateItem(item, empty);
         if (item != null) {
-            label.setText(item.accountNameProperty().get());
+            
+            label.setText(item.getAccount().getAccountName());
             setGraphic(label);
         } else {
             setText(null);

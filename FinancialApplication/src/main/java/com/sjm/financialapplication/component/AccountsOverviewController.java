@@ -46,7 +46,6 @@ public class AccountsOverviewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        acntListView.setCellFactory((ListView<AccountFX> list) -> new DisplayCell(null));
         acntListView.itemsProperty().bind(dataPresenter.accountownerAccountsFXProperty());
         totalAcntBalLabel.textProperty().bindBidirectional(dataPresenter.aggTotalProperty(),
                 new NumberStringConverter());
