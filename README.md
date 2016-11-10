@@ -18,8 +18,7 @@ Scene Builder 2.0
 
 Step 1: Install the Java SE Development Kit 8
 	
-	Watch ["How To Download And Install Java on Window 10 (Java JDK on Windows 10) + Set JAVA_HOME"][(https://www.youtube.com/watch?v=_YmuR4aw9pM)]
-
+["How To Download And Install Java on Window 10 (Java JDK on Windows 10) + Set JAVA_HOME"](https://www.youtube.com/watch?v=_YmuR4aw9pM).
 
 And repeat
 
