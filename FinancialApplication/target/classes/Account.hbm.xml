@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <!--Account-->
+  <class name="com.sjm.financialapplication.model.Account" optimistic-lock="version" schema="STEVEMCQUEEN10101" table="ACCOUNT">
+    <id column="ACCOUNT_ID" name="accountId" type="int">
+      <generator class="native"/>
+    </id>
+    <property name="accountName" type="string">
+      <column length="30" name="ACCOUNT_NAME"/>
+    </property>
+    <property name="accountInitBal" type="big_decimal">
+      <column name="ACCOUNT_INIT_BAL" precision="7"/>
+    </property>
+    <property name="accountCurBal" type="big_decimal">
+      <column name="ACCOUNT_CUR_BAL" precision="7"/>
+    </property>
+    <property name="startDate" type="date">
+      <column default="CURRENT_DATE" length="10" name="START_DATE" not-null="true"/>
+    </property>
+    <set cascade="all" fetch="select" inverse="false" lazy="true" name="accountGoals" order-by="goalId">
+      <key column="ACCOUNT_ID"/>
+      <one-to-many class="com.sjm.financialapplication.model.AccountGoal"/>
+    </set>
+    <!--        <list name="accountGoals"  cascade="all" inverse="false" fetch="subselect">
+            <key column="ACCOUNT_ID"/>
+            <list-index column="AG_INDEX"/>
+            <one-to-many class="com.sjm.financialapplication.domain.AccountGoal"/>
+        </list>-->
+    <set cascade="all" fetch="select" inverse="false" lazy="true" name="accountTransactions" order-by="entry">
+      <key column="ACCOUNT_ID"/>
+      <one-to-many class="com.sjm.financialapplication.model.AccountTransaction"/>
+    </set>
+    <!--        <list name="accountTransactions" cascade="all" inverse="false" fetch="subselect">     
+            <key column="ACCOUNT_ID"/>
+            <list-index column="AT_INDEX"/>
+            <one-to-many class="com.sjm.financialapplication.domain.AccountTransaction"/>
+        </list>-->
+    <!--        <join table="ACCOUNTOWNER_ACCOUNT" inverse="true">
+            <key column="ACCOUNT_ID"/>
+            <many-to-one name="accountowner" column="APP_USER_ID" not-null="true"/>
+        </join>-->
+    <many-to-one class="com.sjm.financialapplication.model.Accountowner" column="APP_USER_ID" name="accountowner" not-null="true"/>
+  </class>
+</hibernate-mapping>

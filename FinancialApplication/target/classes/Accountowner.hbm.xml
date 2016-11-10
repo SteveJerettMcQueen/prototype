@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <!--Parent -->
+  <class name="com.sjm.financialapplication.model.Accountowner" optimistic-lock="version" schema="STEVEMCQUEEN10101" table="ACCOUNTOWNER">
+    <id name="appUserId" type="string">
+      <column length="50" name="APP_USER_ID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="firstName" type="string">
+      <column length="30" name="FIRST_NAME" not-null="true"/>
+    </property>
+    <property name="lastName" type="string">
+      <column length="30" name="LAST_NAME" not-null="true"/>
+    </property>
+    <property name="gender" type="string">
+      <column length="6" name="GENDER" not-null="true"/>
+    </property>
+    <property name="city" type="string">
+      <column length="30" name="CITY"/>
+    </property>
+    <property name="stateResidence" type="string">
+      <column length="4" name="STATE_RESIDENCE"/>
+    </property>
+    <property name="zip" type="string">
+      <column length="30" name="ZIP"/>
+    </property>
+    <property name="street" type="string">
+      <column length="30" name="STREET"/>
+    </property>
+    <!--        <set name="accounts" table="ACCOUNTOWNER_ACCOUNT" cascade="all">
+            <key column="APP_USER_ID" not-null="true"/>
+            <many-to-many column="ACCOUNT_ID"
+                          class="com.sjm.financialapplication.domain.Account"
+                          unique="true" lazy="false" fetch="select"/>
+        </set>-->
+    <set cascade="all" fetch="join" inverse="false" lazy="false" name="accounts" order-by="accountName">
+      <key column="APP_USER_ID"/>
+      <one-to-many class="com.sjm.financialapplication.model.Account"/>
+    </set>
+  </class>
+</hibernate-mapping>

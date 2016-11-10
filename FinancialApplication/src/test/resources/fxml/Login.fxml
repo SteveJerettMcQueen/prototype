@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane fx:id="borderPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjm.financialapplication.component.LoginController">
+    <stylesheets>
+        <URL value="@styles/baseSS.css" />
+        <URL value="@styles/controlSS.css" />
+    </stylesheets>
+    <center>
+        <AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="50.0" layoutY="149.0" text="Account Login">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="userIdTF" layoutX="50.0" layoutY="193.0" prefHeight="35.0" prefWidth="300.0" promptText="Username" />
+                <PasswordField fx:id="passwordTF" layoutX="50.0" layoutY="240.0" onAction="#login" prefHeight="35.0" prefWidth="300.0" promptText="Password" />
+                <Button fx:id="loginBtn" layoutX="50.0" layoutY="286.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="150.0" text="Login" />
+                <Label fx:id="messageLabel" layoutX="50.0" layoutY="339.0" prefHeight="20.0" prefWidth="300.0" visible="true" />
+                <ProgressIndicator fx:id="progressIndicator" layoutX="200.0" layoutY="286.0" prefHeight="35.0" prefWidth="150.0" visible="false" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjm.financialapplication.component.AppUserAccountController">
+    <top>
+          <HBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER_LEFT">
+              <children>
+                  <Label text="My Account">
+                      <font>
+                          <Font size="18.0" />
+                      </font>
+                  </Label>
+              </children>
+          </HBox>
+    </top>
+    <center>
+        <TableView fx:id="appUserTableView" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <columns>
+                <TableColumn fx:id="userIdCol" editable="false" onEditCommit="#updateUserId" prefWidth="150.0" text="User Id" />
+                <TableColumn fx:id="passwordCol" editable="true" onEditCommit="#updatePassword" prefWidth="150.0" text="Password" />
+                <TableColumn fx:id="startDateCol" editable="false" prefWidth="150.0" text="StartDate" />
+            </columns>
+        </TableView>
+    </center>
+   <bottom>
+      <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" minHeight="5.0" prefHeight="9.0" progress="0.0" visible="false" />
+   </bottom>
+   <stylesheets>
+      <URL value="@styles/baseSS.css" />
+      <URL value="@styles/controlSS.css" />
+   </stylesheets>
+</BorderPane>

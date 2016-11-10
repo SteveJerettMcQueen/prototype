@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TabPane tabClosingPolicy="UNAVAILABLE" tabMinHeight="35.0" tabMinWidth="100.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjm.financialapplication.component.AccountDetailPaneController">
+    <tabs>
+        <Tab closable="false" text="Transactions">
+            <content>
+                <fx:include source="tabs/Transactions.fxml" />
+            </content>
+        </Tab>
+        <!--        <Tab closable="false" text="Goal">
+            <content>
+                <fx:include source="tabs/Goals.fxml" />
+            </content>
+        </Tab>-->
+        <Tab closable="false" text="Charts">
+            <content>
+                <fx:include source="tabs/AccountCharts.fxml" />
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

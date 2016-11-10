@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <!-- Treated as one to many but an account has a maximum of one goal temporary used as a workaround-->
+    <!-- Relationship One-To-Many Account -->
+    <class name="com.sjm.financialapplication.domain.AccountGoal" 
+           table="ACCOUNT_GOAL" schema="STEVEMCQUEEN10101"
+           optimistic-lock="version">
+        
+        <id column="GOAL_ID" name="goalId" type="int">
+            <generator class="native"/>
+        </id>
+        
+        <property name="goalDate" type="date">
+            <column name="GOAL_DATE" length="10" not-null="true"/>
+        </property>
+        <property name="targetAmount" type="big_decimal">
+            <column name="TARGET_AMOUNT" precision="12"/>
+        </property>
+        <property name="minAmount" type="big_decimal">
+            <column name="MIN_AMOUNT" precision="12"/>
+        </property>
+        <many-to-one class="com.sjm.financialapplication.domain.Account"
+                     column="ACCOUNT_ID" name="account" not-null="true"/>
+    </class>
+</hibernate-mapping>

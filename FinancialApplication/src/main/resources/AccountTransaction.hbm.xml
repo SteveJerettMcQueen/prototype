@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- Relationship One-To-Many Account-->
+    <class name="com.sjm.financialapplication.model.AccountTransaction" optimistic-lock="version" schema="STEVEMCQUEEN10101" table="ACCOUNT_TRANSACTION">
+        <id column="TRANS_ID" name="transId" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="transDate" type="date">
+            <column default="CURRENT_DATE" length="10" name="TRANS_DATE" not-null="true"/>
+        </property>
+        <property name="category" type="string">
+            <column length="50" name="CATEGORY"/>
+        </property>
+        <property name="description" type="string">
+            <column length="100" name="DESCRIPTION"/>
+        </property>
+        <property name="transType" type="string">
+            <column length="20" name="TRANS_TYPE" not-null="true"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="AMOUNT" not-null="true" precision="12"/>
+        </property>
+        <property name="curBalance" type="big_decimal">
+            <column name="CUR_BALANCE" precision="12"/>
+        </property>
+        <property generated="insert" insert="false" name="entry" type="timestamp" update="false">
+            <column default="CURRENT_TIMESTAMP" length="29" name="ENTRY" not-null="true"/>
+        </property>
+        <many-to-one class="com.sjm.financialapplication.model.Account" column="ACCOUNT_ID" name="account" not-null="true"/>
+    </class>
+</hibernate-mapping>

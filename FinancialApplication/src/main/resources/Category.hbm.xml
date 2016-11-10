@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sjm.financialapplication.model.Category" table="CATEGORY" schema="STEVEMCQUEEN10101" optimistic-lock="version">
+        <id column="CATEGORY_ID" name="categoryId" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="categoryName" type="string">
+            <column name="CATEGORY_NAME" length="30" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

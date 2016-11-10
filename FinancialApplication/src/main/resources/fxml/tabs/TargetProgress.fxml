@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER_LEFT" spacing="3.0" fx:controller="com.sjm.financialapplication.component.TargetProgressController">
+    <children>
+        <Label text="Target Progress" />
+        <HBox alignment="CENTER_LEFT" spacing="5.0">
+            <children>
+                <ProgressBar fx:id="targProgBar" onMouseEntered="#showProgress" onMouseExited="#hideProgress" prefWidth="225.0" progress="0.0" />
+                <HBox fx:id="targProgBox" alignment="CENTER_LEFT" spacing="3.0" visible="false" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="targPercLabel" />
+                        <Label text="\%" />
+                    </children>
+                </HBox>
+            </children>    
+        </HBox>
+    </children>
+</VBox>

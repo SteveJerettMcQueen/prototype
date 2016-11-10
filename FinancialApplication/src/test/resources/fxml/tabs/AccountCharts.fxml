@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjm.financialapplication.component.AccountChartsController">
+    <center>
+        <Accordion>
+            <panes>
+                <TitledPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Balance/Net">
+                    <content>
+                        <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                            <children>
+                                <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                    <center>
+                                        <Accordion>
+                                            <panes>
+                                                <TitledPane text="Balance">
+                                                    <content>
+                                                          <LineChart fx:id="lineChart" alternativeRowFillVisible="false" animated="false" createSymbols="false" horizontalGridLinesVisible="true" horizontalZeroLineVisible="true" legendVisible="false" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                              <xAxis>
+                                                                  <CategoryAxis side="BOTTOM" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                  <NumberAxis side="LEFT" />
+                                                              </yAxis>
+                                                          </LineChart>
+                                                    </content>
+                                                </TitledPane>
+                                                <TitledPane text="Net">
+                                                    <content>
+                                                          <AreaChart fx:id="areaChart" alternativeRowFillVisible="false" animated="false" createSymbols="false" horizontalGridLinesVisible="true" horizontalZeroLineVisible="true" legendVisible="false" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                                                              <xAxis>
+                                                                  <CategoryAxis side="BOTTOM" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                  <NumberAxis side="LEFT" />
+                                                              </yAxis>
+                                                          </AreaChart>
+                                                    </content>
+                                                </TitledPane>
+                                            </panes>
+                                        </Accordion>
+                                    </center>
+                                    <top>
+                              <ToolBar BorderPane.alignment="CENTER_LEFT">
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <items>
+                                              <ComboBox fx:id="monthCB" prefWidth="130.0" promptText="Month" visibleRowCount="6" />
+                                    <ComboBox fx:id="yearCB" prefWidth="130.0" promptText="Year" />
+                                    <Button mnemonicParsing="false" onAction="#showData" text="Show Data" />
+                                 </items>
+                              </ToolBar>
+                                    </top>
+                                    <StackPane.margin>
+                                        <Insets />
+                                    </StackPane.margin>
+                                </BorderPane>
+                            </children>
+                        </StackPane>
+                    </content>
+                </TitledPane>
+                <TitledPane fx:id="catPane" text="Categories">
+                    <content>
+                  <BorderPane fx:id="placeHolder" prefHeight="350.0">
+                     <center>
+                        <Button mnemonicParsing="false" onAction="#addBarChart" text="Click Here To View Categories" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+    </center>
+   <stylesheets>
+      <URL value="@../styles/baseSS.css" />
+      <URL value="@../styles/controlSS.css" />
+   </stylesheets>
+</BorderPane>

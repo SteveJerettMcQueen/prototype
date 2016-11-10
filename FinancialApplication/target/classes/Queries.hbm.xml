@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    
+    <query name="UpdateAccountownerId">
+        <![CDATA[
+                UPDATE Accountowner ao
+                SET ao.appUserId = :nv
+                WHERE ao.appUserId = :appUserId
+            ]]>     
+    </query>
+    
+    <query name="GetAggBalance">
+        <![CDATA[
+                SELECT a.accountName, a.accountCurBal
+                FROM Account a
+                WHERE a.accountowner.appUserId = :appUserId
+            ]]>
+    </query>
+    
+    <query name="GetAggTotal">
+        <![CDATA[
+                SELECT SUM(a.accountCurBal)
+                FROM Account a
+                WHERE a.accountowner.appUserId = :appUserId
+            ]]>
+    </query>
+    
+    <query name="findCredits">
+        <![CDATA[
+                SELECT SUM(at.amount), COUNT(at.amount)
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.amount > 0
+            ]]>
+    </query>
+
+    <query name="sumCredits">
+        <![CDATA[
+                SELECT SUM(at.amount)
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.amount > 0
+            ]]>
+    </query>
+
+
+    <query name="avgCredits">
+        <![CDATA[
+                SELECT AVG(at.amount)
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.amount > 0
+            ]]>
+    </query>
+
+    <query name="findDebits">
+            <![CDATA[
+                SELECT SUM(at.amount), COUNT(at.amount)
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.amount < 0
+            ]]>
+    </query>
+    
+    <query name="sumDebits">
+            <![CDATA[
+                SELECT SUM(at.amount)
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.amount < 0
+            ]]>
+    </query>
+    
+    <query name="avgDebits">
+            <![CDATA[
+                SELECT AVG(at.amount)
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.amount < 0
+            ]]>
+    </query>
+            
+    <query name="GetAccountAmounts">
+        <![CDATA[
+                SELECT at.amount, at.entry
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId 
+                AND at.transDate
+                BETWEEN :startDate AND :endDate
+                ORDER BY at.entry ASC
+            ]]>
+    </query>
+    
+    <query name="getAccountBalances">
+        <![CDATA[
+                SELECT at.curBalance, at.entry
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                AND at.transDate
+                BETWEEN :startDate AND :endDate
+                ORDER BY at.entry ASC
+            ]]>
+    </query>
+    
+    <query name="GetAccountCategories">
+        <![CDATA[
+                SELECT SUM(at.amount), at.category
+                FROM AccountTransaction at
+                WHERE at.account.accountId = :accountId
+                GROUP BY at.category
+            ]]>
+    </query> 
+    
+    <!--    <query name="GetAllCategories">
+        <![CDATA[
+                SELECT cat.categoryName
+                FROM Category cat
+                ORDER BY cat.categoryName ASC
+            ]]>
+    </query> -->
+    
+    <query name="UpdateAccountBalance">
+        <![CDATA[
+                UPDATE Account a 
+                SET a.accountCurBal = :accountCurBal 
+                WHERE a.accountId = :accountId
+            ]]>
+    </query>
+  
+
+</hibernate-mapping>
