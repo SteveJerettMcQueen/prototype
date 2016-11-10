@@ -1,6 +1,6 @@
-# Project Title
+# Financial Application
 
-One Paragraph of project description goes here
+The purpose of this project is to serve as a personal finance management system for and individual user.
 
 ## Getting Started
 
@@ -8,10 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+#### Java SE 
+	* JavaFX 8
+	* Scene Builder
 ```
 
 ### Installing
