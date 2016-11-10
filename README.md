@@ -28,13 +28,10 @@ Step 3: Install Scene Builer 2.0
 
 ["How to Install JavaFX Scene Builder"](https://www.youtube.com/watch?v=e1fjF9t60dE).
 
-### 
-If you do not need to install anything, download the project from the ["project website"] and add the folder
-to the NetBeans IDE.
+### Non-Installation
 
-## Deployment
-
-
+If you do not need to install anything, download the project from the ["project website"](http://stevejerettmcqueen.github.io/prototype/). and add the folder
+to NetBeans IDE.
 
 ## Built With
 
