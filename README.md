@@ -9,9 +9,10 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 ```
-#### Java SE 
-	* JavaFX 8
-	* Scene Builder
+Java SE 
+	NetBeans IDE
+	JavaFX 8
+	Scene Builder 2.0
 ```
 
 ### Installing
