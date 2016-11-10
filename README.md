@@ -18,7 +18,10 @@ Scene Builder 2.0
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+Step 1: Install the Java SE Development Kit 8
+	
+	Watch "How To Download And Install Java on Window 10 (Java JDK on Windows 10) + Set JAVA_HOME" at
+	[Sites Using React](https://www.youtube.com/watch?v=_YmuR4aw9pM)
 
 ```
 Give the example
