@@ -30,7 +30,7 @@ Step 3: Install Scene Builer 2.0
 
 ### Non-Installation
 
-If you do not need to install anything, download the project from the ["project website"](http://stevejerettmcqueen.github.io/prototype/). and add the folder
+If you do not need to install anything, download the project from the ["project website"](http://stevejerettmcqueen.github.io/prototype/) and add the folder
 to NetBeans IDE.
 
 ## Built With
