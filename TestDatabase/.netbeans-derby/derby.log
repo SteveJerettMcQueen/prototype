@@ -1,7 +1,7 @@
-Mon Dec 05 17:00:36 EST 2016 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Fri Dec 09 17:37:47 EST 2016 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon Dec 05 17:00:38 EST 2016:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0158-d100-bed6-ffffb6bf19d5 
+Fri Dec 09 17:37:48 EST 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0158-e5bc-3672-ffffb6bf19d5 
 on database directory E:\Master\Processed Information\Computer Science\Database Systems\TestDatabase\.netbeans-derby\Finances with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
 Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_60/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,7 +12,7 @@ os.arch=amd64
 os.version=6.1
 derby.system.home=E:\Master\Processed Information\Computer Science\Database Systems\TestDatabase\.netbeans-derby
 Database Class Loader started - derby.database.classpath=''
-Mon Dec 05 17:00:39 EST 2016 Thread[DRDAConnThread_2,5,main] (XID = 201845), (SESSIONID = 0), (DATABASE = Finances), (DRDAID = {1}), Cleanup action starting
+Fri Dec 09 17:37:49 EST 2016 Thread[DRDAConnThread_2,5,main] (XID = 203273), (SESSIONID = 0), (DATABASE = Finances), (DRDAID = {1}), Cleanup action starting
 java.sql.SQLNonTransientConnectionException: Connection authentication failure occurred.  Reason: Invalid authentication..
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -60,9 +60,4 @@ ERROR 08004: Connection authentication failure occurred.  Reason: Invalid authen
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Mon Dec 05 17:00:39 EST 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = Finances), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
-----------------------------------------------------------------
-Mon Dec 05 17:09:36 EST 2016: Shutting down Derby engine
-----------------------------------------------------------------
-Mon Dec 05 17:09:36 EST 2016:
-Shutting down instance a816c00e-0158-d100-bed6-ffffb6bf19d5 on database directory E:\Master\Processed Information\Computer Science\Database Systems\TestDatabase\.netbeans-derby\Finances with class loader sun.misc.Launcher$AppClassLoader@5e2de80c 
+Fri Dec 09 17:37:49 EST 2016 Thread[DRDAConnThread_2,5,main] (DATABASE = Finances), (DRDAID = {1}), Connection authentication failure occurred.  Reason: Invalid authentication..
