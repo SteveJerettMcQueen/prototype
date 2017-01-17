@@ -4,7 +4,7 @@ The purpose of this project is to serve as a personal finance management system 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for usage and testing purposes. See the usage section for notes on how to use the project.
 
 ### Prerequisites
 
@@ -28,12 +28,11 @@ Step 3: Install Scene Builer 2.0
 
 ["How to Install JavaFX Scene Builder"](https://www.youtube.com/watch?v=e1fjF9t60dE).
 
-### Non-Installation
+### Usage
 
-If you do not need to install anything, download the project from the ["project website"](http://stevejerettmcqueen.github.io/prototype/) and add the folder
-to NetBeans IDE.
+To use the project, watch the instructional video on the ["project website"](https://stevejerettmcqueen.github.io/prototype/).
 
-## Built With
+### Built With
 
 * [Apache Derby](https://db.apache.org/derby/) - Database Management System
 * [Hibernate ORM](http://hibernate.org/orm/) - Object Relational Mapping
@@ -41,7 +40,7 @@ to NetBeans IDE.
 * [Spring Framework](https://projects.spring.io/spring-framework/) - Dependency Injection
 
 
-## Authors
+### Authors
 
 * **Steve McQueen** - *Initial work*
 
