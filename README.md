@@ -35,7 +35,11 @@ to NetBeans IDE.
 
 ## Built With
 
+* [Apache Derby](https://db.apache.org/derby/) - Database Management System
+* [Hibernate ORM](http://hibernate.org/orm/) - Object Relational Mapping
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Spring Framework](https://projects.spring.io/spring-framework/) - Dependency Injection
+
 
 ## Authors
 
