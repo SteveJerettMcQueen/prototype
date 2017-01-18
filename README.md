@@ -30,7 +30,7 @@ Step 3: Install Scene Builer 2.0
 
 ### Usage
 
-To use the project, watch the instructional video [here]().
+To use the project, watch the instructional video [here](https://www.youtube.com/watch?v=-Rm_2UA-FxQ).
 
 ### Built With
 
