@@ -30,7 +30,7 @@ Step 3: Install Scene Builer 2.0
 
 ### Usage
 
-To use the project, watch the instructional video on the ["project website"](https://stevejerettmcqueen.github.io/prototypefinapp/).
+To use the project, watch the instructional ["here"]().
 
 ### Built With
 
