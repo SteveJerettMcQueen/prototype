@@ -38,7 +38,8 @@ To use the project, watch the instructional video [here](https://www.youtube.com
 * [Hibernate ORM](http://hibernate.org/orm/) - Object Relational Mapping
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Spring Framework](https://projects.spring.io/spring-framework/) - Dependency Injection
-
+* [Java](https://www.oracle.com/java/index.html) - Programming Language
+* [JavaFX](http://www.oracle.com/technetwork/java/javase/documentation/javafx-docs-2159875.html) - Graphical User Interface
 
 ### Authors
 
