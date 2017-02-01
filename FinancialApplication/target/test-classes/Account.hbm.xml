@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <!--Account-->
+    <class name="com.sjm.financialapplication.domain.Account"
+           table="ACCOUNT" schema="STEVEMCQUEEN10101" 
+           optimistic-lock="version">
+        
+        <id column="ACCOUNT_ID" name="accountId" type="int">
+            <generator class="native"/>
+        </id>
+        
+        <property name="accountName" type="string">
+            <column name="ACCOUNT_NAME" length="30"/>
+        </property>
+        
+        <property name="accountInitBal" type="big_decimal">
+            <column name="ACCOUNT_INIT_BAL" precision="7"/>
+        </property>
+        
+        <property name="accountCurBal" type="big_decimal">
+            <column name="ACCOUNT_CUR_BAL" precision="7"/>
+        </property>
+        
+        <property name="startDate" type="date">
+            <column name="START_DATE" length="10" default="CURRENT_DATE" not-null="true"/>
+        </property>
+        
+        <set name="accountGoals" cascade="all" inverse="false" fetch="select" lazy="true" order-by="goalId">
+            <key column="ACCOUNT_ID"/>
+            <one-to-many class="com.sjm.financialapplication.domain.AccountGoal"/>
+        </set>
+        <!--        <list name="accountGoals"  cascade="all" inverse="false" fetch="subselect">
+            <key column="ACCOUNT_ID"/>
+            <list-index column="AG_INDEX"/>
+            <one-to-many class="com.sjm.financialapplication.domain.AccountGoal"/>
+        </list>-->
+        <set name="accountTransactions" cascade="all" inverse="false" fetch="select" lazy="true" order-by="entry">
+            <key column="ACCOUNT_ID"/>
+            <one-to-many class="com.sjm.financialapplication.domain.AccountTransaction"/>
+        </set>
+        <!--        <list name="accountTransactions" cascade="all" inverse="false" fetch="subselect">     
+            <key column="ACCOUNT_ID"/>
+            <list-index column="AT_INDEX"/>
+            <one-to-many class="com.sjm.financialapplication.domain.AccountTransaction"/>
+        </list>-->
+        <!--        <join table="ACCOUNTOWNER_ACCOUNT" inverse="true">
+            <key column="ACCOUNT_ID"/>
+            <many-to-one name="accountowner" column="APP_USER_ID" not-null="true"/>
+        </join>-->
+        <many-to-one class="com.sjm.financialapplication.domain.Accountowner" 
+                     column="APP_USER_ID" name="accountowner" not-null="true"/>
+    </class>
+    
+</hibernate-mapping>

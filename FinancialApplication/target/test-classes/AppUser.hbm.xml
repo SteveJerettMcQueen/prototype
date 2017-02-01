@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sjm.financialapplication.domain.AppUser"
+           table="APP_USER" schema="STEVEMCQUEEN10101"
+           optimistic-lock="version">
+        
+        <id name="appUserId" type="string">
+            <column name="APP_USER_ID" length="50" />
+            <generator class="assigned"/>
+        </id>
+        
+        <property name="password" type="string">
+            <column name="PASSWORD" length="30" not-null="true"/>
+        </property>
+        <property name="startDate" type="date">
+            <column name="START_DATE" length="10" default="CURRENT_DATE" not-null="true"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjm.financialapplication.component.TransactionsController">
+    <top>
+      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+              <HBox alignment="CENTER" spacing="2.0">
+                  <children>
+                      <TextField fx:id="searchTF" promptText="Search" HBox.hgrow="ALWAYS" />
+                      <Button mnemonicParsing="false" onAction="#search" prefWidth="75.0" text="Q" />
+                  </children>
+              </HBox>
+                  <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" minHeight="0.0" prefHeight="7.0" progress="0.0" visible="false" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+    </top>
+    <center>
+        <BorderPane fx:id="tablePane" BorderPane.alignment="CENTER">
+            <center>
+                <StackPane fx:id="tableStackPane" BorderPane.alignment="CENTER">
+                    <children>
+                        <TableView fx:id="transTableView" editable="true" tableMenuButtonVisible="true" StackPane.alignment="CENTER">
+                            <columns>
+                                <TableColumn fx:id="transIdCol" editable="false" maxWidth="1.7976931348623157E308" prefWidth="-1.0" sortable="false" text="Trans Id" />
+                                <TableColumn fx:id="dateCol" editable="true" maxWidth="1.7976931348623157E308" onEditCommit="#updateTransDate" prefWidth="-1.0" text="Date" />
+                                <TableColumn fx:id="categoryCol" editable="true" maxWidth="1.7976931348623157E308" onEditCommit="#updateCategory" prefWidth="-1.0" text="Category" />
+                                <TableColumn fx:id="descCol" editable="true" maxWidth="1.7976931348623157E308" onEditCommit="#updateDescription" prefWidth="-1.0" sortable="false" text="Description" />
+                                <TableColumn fx:id="typeCol" maxWidth="1.7976931348623157E308" onEditCommit="#updateType" prefWidth="-1.0" text="Type" />
+                                <TableColumn fx:id="creditCol" editable="false" maxWidth="1.7976931348623157E308" prefWidth="-1.0" sortable="false" text="Credit" />
+                                <TableColumn fx:id="debitCol" editable="false" maxWidth="1.7976931348623157E308" prefWidth="-1.0" sortable="false" text="Debit" />
+                                <TableColumn fx:id="balCol" editable="false" maxWidth="1.7976931348623157E308" prefWidth="-1.0" sortable="false" text="Balance" />
+                            </columns>
+                        </TableView>
+                        <fx:include source="../custom/MessagePane.fxml" />
+                    </children>
+                </StackPane>
+            </center>
+            <bottom>
+                  <HBox fx:id="actionBox" alignment="CENTER" prefHeight="30.0" spacing="3.0">
+                      <children>
+                          <DatePicker fx:id="datePicker" editable="false" prefWidth="125.0" promptText="yyyy/mm/dd" showWeekNumbers="true" HBox.hgrow="ALWAYS" />
+                          <TextField fx:id="descTF" prefWidth="295.0" promptText="Description" HBox.hgrow="ALWAYS" />
+                          <TextField fx:id="creditTF" onAction="#addTransaction" prefWidth="50.0" promptText="Credit" HBox.hgrow="ALWAYS" />
+                          <TextField fx:id="debitTF" onAction="#addTransaction" prefWidth="50.0" promptText="Debit" HBox.hgrow="ALWAYS" />
+                          <Button mnemonicParsing="false" onAction="#addTransaction" prefWidth="75.0" text="Add" />
+                          <Button mnemonicParsing="false" onAction="#removeTransaction" prefWidth="75.0" text="Remove Last" />
+                      </children>
+                  </HBox>
+            </bottom>
+        </BorderPane>
+    </center>
+    <bottom>
+        <fx:include source="TablePager.fxml" />
+    </bottom>
+   <stylesheets>
+      <URL value="@../styles/baseSS.css" />
+      <URL value="@../styles/controlSS.css" />
+   </stylesheets>
+</BorderPane>

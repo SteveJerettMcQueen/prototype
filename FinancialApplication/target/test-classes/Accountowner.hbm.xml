@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    
+    <!--Parent -->
+    <class name="com.sjm.financialapplication.domain.Accountowner"
+           table="ACCOUNTOWNER" schema="STEVEMCQUEEN10101"
+           optimistic-lock="version">
+        
+        <id name="appUserId" type="string">
+            <column name="APP_USER_ID" length="50" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="30" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="30" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="GENDER" length="6" not-null="true" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="30" />
+        </property>
+        <property name="stateResidence" type="string">
+            <column name="STATE_RESIDENCE" length="4" />
+        </property>
+        <property name="zip" type="string">
+            <column name="ZIP" length="30" />
+        </property>
+        <property name="street" type="string">
+            <column name="STREET" length="30" />
+        </property>
+        <!--        <set name="accounts" table="ACCOUNTOWNER_ACCOUNT" cascade="all">
+            <key column="APP_USER_ID" not-null="true"/>
+            <many-to-many column="ACCOUNT_ID"
+                          class="com.sjm.financialapplication.domain.Account"
+                          unique="true" lazy="false" fetch="select"/>
+        </set>-->
+        <set name="accounts" cascade="all" inverse="false" fetch="join" lazy="false" order-by="accountName">
+            <key column="APP_USER_ID"/>
+            <one-to-many class="com.sjm.financialapplication.domain.Account"/>
+        </set>
+    </class>    
+ 
+</hibernate-mapping>
